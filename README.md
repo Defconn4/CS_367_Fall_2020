@@ -11,6 +11,6 @@ Project 1 - Development of custom floating point representation
 Project 3 - Custom UNIX shell (MASH - Mason Shell)
 
 ## Copyright & Use
-I, Frank Costantino, am the sole owner and developer of this code. It is not intended for use by anyone else. Use by any other party or individual is strictly prohibited.
+I, Frank Costantino, am the sole owner and developer of this code. Use by any other party or individual is strictly prohibited.
 
 Code is available upon request.
