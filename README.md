@@ -37,11 +37,37 @@ By far the most interesting project for me was our custom UNIX shell. It encompa
 1) Accept a single line of command from a user (from either a list of custom built-in commands or a standard linux command).
 2) Supports any number of user jobs concurrently (1 foreground job at any time, and a potentially unlimted amount of background commands).
 3) Provide job control (the ability to stop, continue, and kill user jobs as well as moving jobs to between the foreground and background).
-4) Support control operators (&& and || to run two jobs in one command) and file redirection.
+4) Support control operators (&& and ||) to run two jobs in one command) and file redirection.
 
 # Implementation
 
-For this project, I had full control over design. I chose a struct of linked lists to easily track jobs and control the movement of jobs between the foreground and background.
+For this project, I had full control over design. I chose a struct of singly linked lists to easily track jobs and control the movement of jobs between the foreground and background. Since I think the code speaks for itself better than I can explain it, here is my data structure framework:
+
+       typedef struct command_struct {
+            int job_id;         // Job id assigned upon creation of job.
+            int pid;            // Process ID.
+            char *exec_status;  // Either "Stopped" or "Running".
+            char *cmd;          // Command line from user after removal of newline.
+            struct command_struct *next;
+       } Command;
+       
+       typedef struct process_list {
+            Command *head;      // SLL.
+            int count;          // Number of jobs in list.
+       } List;
+       
+       typedef struct shell_jobs {
+            List *fg_jobs;      // SLL for foreground jobs.
+            List *bg_jobs;      // SLL for background jobs.
+       } Jobs;
+
+## What I Learned
+
+Designing and implementing a solution, entirely on my own for the first, was by far the most valuable part of this project. I was forced to think of the scalability and versatility of my design far ahead of time of coding. I spent approximately 3 days planning my design and code implementation to ensure I had a strong foundation for my code base.
+
+In terms of C, this was hands-on experience with job control, and much of the signal handling process. Understanding how children processes communicate with their parent was not easy for me. I had some days where I would just have to focus on understanding how reaped/zombie children signaled changes to their parents, without doing much coding at all. This project ultimately taught me you that understand WHAT and WHY you're coding is often more important than just writing code to perform a task. In other words, I need to full understand the task at hand before even attempting to code to make the most effective use of time and make the most of my code.
+
+I earned a 95/100 on this project.
 
 ## Copyright & Use
 I, Frank Costantino, am the sole owner and developer of this code. Use by any other party or individual is strictly prohibited.
