@@ -7,6 +7,7 @@ Programming projects from CS 367 - Computer Systems and Programming (C)
 The intent of the repo is to showcase some of the more complex projects I had worked on during the Fall 2020 semester. These projects most accurately reflect a real-world application of C.
 
 Project 1 - Development of Floating Point Representation
+
 Project 3 - Custom UNIX shell (MASH - Mason Shell)
 
 ## Copyright & Use
