@@ -6,6 +6,11 @@ Programming projects from CS 367 - Computer Systems and Programming (C)
 
 The intent of the repo is to showcase some of the more complex projects I had worked on during the Fall 2020 semester. These projects most accurately reflect a real-world application of C.
 
+    NOTE: Code I have written for each project is in the following files:
+    
+    Project 1: fp_functs.c
+    Project 3: shell.c
+
 # Project 1 - Development of custom floating point representation
 
 The intent of this project was to expand upon class discussion of the IEEE standard for floating point representation. Implementation allows conversion of standard C floating point values to a the custom bit-level floating point representation for internal use.
