@@ -30,7 +30,18 @@ Most importantly, this project was a great dive into an issue you may run into w
 
 By far, the designing phase was where I spent the most of my time, but ultimately resulted in much less debugging near the deadline and a final grade of 97/100.
 
-# Project 3 - Custom UNIX shell (MASH - Mason Shell)
+# Project 3 - Custom UNIX shell (MASH - MAson SHell)
+
+By far the most interesting project for me was our custom UNIX shell. It encompassed major lecture topics such as Linux processes, signal, and Unix-IO. The shell implementation performs the following tasks:
+
+1) Accept a single line of command from a user (from either a list of custom built-in commands or a standard linux command).
+2) Supports any number of user jobs concurrently (1 foreground job at any time, and a potentially unlimted amount of background commands).
+3) Provide job control (the ability to stop, continue, and kill user jobs as well as moving jobs to between the foreground and background).
+4) Support control operators (&& and || to run two jobs in one command) and file redirection.
+
+# Implementation
+
+For this project, I had full control over design. I chose a struct of linked lists to easily track jobs and control the movement of jobs between the foreground and background.
 
 ## Copyright & Use
 I, Frank Costantino, am the sole owner and developer of this code. Use by any other party or individual is strictly prohibited.
