@@ -49,21 +49,21 @@ By far the most interesting project for me was our custom UNIX shell. It encompa
 For this project, I had full control over design. I chose a struct of singly linked lists to easily track jobs and control the movement of jobs between the foreground and background. Since I think the code speaks for itself better than I can explain it, here is my data structure framework:
 
        typedef struct command_struct {
-            int job_id;         // Job id assigned upon creation of job.
-            int pid;            // Process ID.
-            char *exec_status;  // Either "Stopped" or "Running".
-            char *cmd;          // Command line from user after removal of newline.
+            int job_id;             // Job id assigned upon creation of job
+            int pid;                // Process ID
+            char *exec_status;      // Either "Stopped" or "Running"
+            char *cmd;              // Command line from user after removal of newline
             struct command_struct *next;
        } Command;
        
        typedef struct process_list {
-            Command *head;      // SLL.
-            int count;          // Number of jobs in list.
+            Command *head;          // SLL
+            int count;              // Number of jobs in list
        } List;
        
        typedef struct shell_jobs {
-            List *fg_jobs;      // SLL for foreground jobs.
-            List *bg_jobs;      // SLL for background jobs.
+            List *fg_jobs;          // SLL for foreground jobs
+            List *bg_jobs;          // SLL for background jobs
        } Jobs;
 
 ## What I Learned
